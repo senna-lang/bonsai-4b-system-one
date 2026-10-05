@@ -1,0 +1,72 @@
+{
+  "meta": {
+    "backend": "mlx",
+    "sample_size": 500,
+    "seed": 0,
+    "machine": "arm64",
+    "platform": "macOS-26.4.1-arm64-arm-64bit"
+  },
+  "results": [
+    {
+      "task": "AG News",
+      "kind": "choice",
+      "n": 500,
+      "options": 4,
+      "accuracy": 0.868,
+      "accuracy_ci95": [
+        0.838,
+        0.896
+      ],
+      "seconds": 636.5
+    },
+    {
+      "task": "MASSIVE scenario (en-US)",
+      "kind": "choice",
+      "n": 500,
+      "options": 18,
+      "accuracy": 0.562,
+      "accuracy_ci95": [
+        0.518,
+        0.604
+      ],
+      "seconds": 448.4
+    },
+    {
+      "task": "MNLI (matched)",
+      "kind": "choice",
+      "n": 500,
+      "options": 3,
+      "accuracy": 0.824,
+      "accuracy_ci95": [
+        0.79,
+        0.856
+      ],
+      "seconds": 428.5
+    },
+    {
+      "task": "BoolQ",
+      "kind": "noul",
+      "n": 500,
+      "options": 2,
+      "accuracy": 0.836,
+      "accuracy_ci95": [
+        0.802,
+        0.868
+      ],
+      "seconds": 874.3
+    },
+    {
+      "task": "SST-5",
+      "kind": "score",
+      "n": 500,
+      "options": 5,
+      "accuracy": 0.402,
+      "accuracy_ci95": [
+        0.36,
+        0.444
+      ],
+      "mae": 0.766,
+      "seconds": 378.9
+    }
+  ]
+}

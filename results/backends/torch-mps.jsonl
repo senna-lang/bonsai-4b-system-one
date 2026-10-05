@@ -1,0 +1,42 @@
+{"id": "bakery-oven", "branch": 0, "kind": "choice", "backend": "torch", "probabilities": [0.9969195127487183, 0.0026511207688599825, 0.00042941560968756676]}
+{"id": "bakery-oven", "branch": 1, "kind": "score", "backend": "torch", "probabilities": [0.011513743549585342, 0.3933860659599304, 0.5293588042259216, 0.0657414048910141]}
+{"id": "bakery-oven", "branch": 2, "kind": "noul", "backend": "torch", "probabilities": [0.0005072812200523913, 0.9994926452636719]}
+{"id": "library-return", "branch": 0, "kind": "choice", "backend": "torch", "probabilities": [0.9934744238853455, 0.004859306383877993, 0.0016662627458572388]}
+{"id": "library-return", "branch": 1, "kind": "score", "backend": "torch", "probabilities": [0.006489704828709364, 0.7327317595481873, 0.24929939210414886, 0.011479117907583714]}
+{"id": "library-return", "branch": 2, "kind": "noul", "backend": "torch", "probabilities": [0.9738444089889526, 0.026155617088079453]}
+{"id": "cafe-wifi", "branch": 0, "kind": "choice", "backend": "torch", "probabilities": [0.9541829824447632, 0.04031779244542122, 0.005499214865267277]}
+{"id": "cafe-wifi", "branch": 1, "kind": "noul", "backend": "torch", "probabilities": [0.11920291930437088, 0.8807971477508545]}
+{"id": "cafe-wifi", "branch": 2, "kind": "score", "backend": "torch", "probabilities": [0.0021204177755862474, 0.12517817318439484, 0.3246874511241913, 0.5480139255523682]}
+{"id": "bike-repair", "branch": 0, "kind": "choice", "backend": "torch", "probabilities": [0.9726119637489319, 0.021826177835464478, 0.00556180439889431]}
+{"id": "bike-repair", "branch": 1, "kind": "noul", "backend": "torch", "probabilities": [0.0007854738505557179, 0.9992145299911499]}
+{"id": "hotel-booking", "branch": 0, "kind": "choice", "backend": "torch", "probabilities": [0.9969834685325623, 0.0024520428851246834, 0.0005644923076033592]}
+{"id": "hotel-booking", "branch": 1, "kind": "score", "backend": "torch", "probabilities": [0.007731472607702017, 0.0905802994966507, 0.7350855469703674, 0.16660267114639282]}
+{"id": "hotel-booking", "branch": 2, "kind": "noul", "backend": "torch", "probabilities": [0.0015247863484546542, 0.9984752535820007]}
+{"id": "lab-freezer", "branch": 0, "kind": "choice", "backend": "torch", "probabilities": [0.9849829077720642, 0.010199224576354027, 0.0048177726566791534]}
+{"id": "lab-freezer", "branch": 1, "kind": "noul", "backend": "torch", "probabilities": [0.000947308843024075, 0.9990527033805847]}
+{"id": "lab-freezer", "branch": 2, "kind": "score", "backend": "torch", "probabilities": [0.00452724564820528, 0.10384778678417206, 0.8168261647224426, 0.07479875534772873]}
+{"id": "school-bus", "branch": 0, "kind": "choice", "backend": "torch", "probabilities": [0.9956743121147156, 0.0039132083766162395, 0.0004124491533730179]}
+{"id": "school-bus", "branch": 1, "kind": "noul", "backend": "torch", "probabilities": [0.9914224743843079, 0.008577483706176281]}
+{"id": "garden-water", "branch": 0, "kind": "choice", "backend": "torch", "probabilities": [0.9969202280044556, 0.0025495595764368773, 0.0005302578210830688]}
+{"id": "garden-water", "branch": 1, "kind": "score", "backend": "torch", "probabilities": [0.0012121177278459072, 0.025315869599580765, 0.8582273721694946, 0.115244559943676]}
+{"id": "garden-water", "branch": 2, "kind": "noul", "backend": "torch", "probabilities": [0.000523375638294965, 0.9994766116142273]}
+{"id": "app-login", "branch": 0, "kind": "choice", "backend": "torch", "probabilities": [0.987936794757843, 0.0105545399710536, 0.001508692861534655]}
+{"id": "app-login", "branch": 1, "kind": "noul", "backend": "torch", "probabilities": [0.0038844766095280647, 0.9961155652999878]}
+{"id": "app-login", "branch": 2, "kind": "score", "backend": "torch", "probabilities": [0.003397021209821105, 0.08625206351280212, 0.3255118727684021, 0.5848389863967896]}
+{"id": "parcel-wrong", "branch": 0, "kind": "choice", "backend": "torch", "probabilities": [0.9962339997291565, 0.00340176559984684, 0.00036418967647477984]}
+{"id": "parcel-wrong", "branch": 1, "kind": "noul", "backend": "torch", "probabilities": [0.9780517220497131, 0.021948250010609627]}
+{"id": "office-heat", "branch": 0, "kind": "choice", "backend": "torch", "probabilities": [0.9949560761451721, 0.004680118523538113, 0.00036372250178828835]}
+{"id": "office-heat", "branch": 1, "kind": "noul", "backend": "torch", "probabilities": [0.08210661262273788, 0.9178933501243591]}
+{"id": "office-heat", "branch": 2, "kind": "score", "backend": "torch", "probabilities": [0.0056676110252738, 0.12308716028928757, 0.21102048456668854, 0.6602247357368469]}
+{"id": "train-delay", "branch": 0, "kind": "choice", "backend": "torch", "probabilities": [0.9947662353515625, 0.004679225385189056, 0.0005545048043131828]}
+{"id": "train-delay", "branch": 1, "kind": "noul", "backend": "torch", "probabilities": [0.0006312433979474008, 0.9993687272071838]}
+{"id": "pet-clinic", "branch": 0, "kind": "choice", "backend": "torch", "probabilities": [0.9972967505455017, 0.0024147862568497658, 0.00028840507729910314]}
+{"id": "pet-clinic", "branch": 1, "kind": "noul", "backend": "torch", "probabilities": [0.0005614786641672254, 0.999438464641571]}
+{"id": "pet-clinic", "branch": 2, "kind": "score", "backend": "torch", "probabilities": [0.23710735142230988, 0.6445246338844299, 0.1019785925745964, 0.016389451920986176]}
+{"id": "museum-light", "branch": 0, "kind": "choice", "backend": "torch", "probabilities": [0.9977408647537231, 0.0018523053731769323, 0.0004068974812980741]}
+{"id": "museum-light", "branch": 1, "kind": "noul", "backend": "torch", "probabilities": [0.9876639246940613, 0.01233609952032566]}
+{"id": "water-bill", "branch": 0, "kind": "choice", "backend": "torch", "probabilities": [0.9883108735084534, 0.010893700644373894, 0.0007953263120725751]}
+{"id": "water-bill", "branch": 1, "kind": "noul", "backend": "torch", "probabilities": [0.0021322614047676325, 0.9978677034378052]}
+{"id": "water-bill", "branch": 2, "kind": "score", "backend": "torch", "probabilities": [0.01360577903687954, 0.3220018446445465, 0.5968971252441406, 0.06749524921178818]}
+{"id": "concert-sound", "branch": 0, "kind": "choice", "backend": "torch", "probabilities": [0.9940206408500671, 0.005216141231358051, 0.0007632901542820036]}
+{"id": "concert-sound", "branch": 1, "kind": "noul", "backend": "torch", "probabilities": [0.000947308843024075, 0.9990527033805847]}

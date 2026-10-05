@@ -1,0 +1,28 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "system-one-bonsai"
+version = "0.1.0"
+description = "Tree-masked multi-question inference on frozen Ternary-Bonsai-4B"
+license = "Apache-2.0"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["huggingface_hub"]
+
+[project.optional-dependencies]
+torch = ["torch==2.10.0", "transformers==4.57.6"]
+# MLX needs a separate environment: its transformers pin differs from the torch extra.
+mlx = ["mlx==0.31.1", "mlx-lm==0.31.2", "transformers==5.17.0"]
+test = ["pytest>=8"]
+bench = ["datasets>=4"]
+
+[tool.uv]
+conflicts = [[{ extra = "torch" }, { extra = "mlx" }]]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/system_one_bonsai"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

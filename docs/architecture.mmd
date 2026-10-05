@@ -1,0 +1,8 @@
+flowchart LR
+    R["Shared prefix<br/>(chat header + record)"] --> B1["Branch 1<br/>question + options"]
+    R --> B2["Branch 2<br/>question + options"]
+    R --> BN["Branch N<br/>question + options"]
+    B1 & B2 & BN --> F["One forward pass<br/>frozen Ternary-Bonsai-4B<br/>tree attention mask"]
+    F --> P1["P(A, B, ...) for branch 1"]
+    F --> P2["P(A, B, ...) for branch 2"]
+    F --> PN["P(A, B, ...) for branch N"]
