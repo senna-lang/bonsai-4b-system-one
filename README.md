@@ -102,13 +102,44 @@ probabilities = predict_request(model, tokenizer, request)
 
 Probabilities are **conditional on the listed options** and are not guaranteed to be calibrated. This code uses one canonical option order; it does not average over option orders.
 
+## Local server (System One API format)
+
+Loading the model takes a few seconds, so for repeated use keep it resident behind a local HTTP endpoint:
+
+```bash
+python -m system_one_bonsai.serve            # MLX on 127.0.0.1:8765; --backend torch, --host, --port
+```
+
+`POST /v1/systemone` accepts and returns the request and answer shapes that System One API clients use, so a client of that API can point its base URL here:
+
+```bash
+curl -s localhost:8765/v1/systemone -d '{
+  "state": {"ticket": "I was charged twice for my order and want my money back."},
+  "questions": {
+    "team":    {"type": "choice", "instructions": "Which team should handle this?", "criteria": {"billing": "Payments and refunds", "shipping": "Delivery", "tech": "Product issues"}},
+    "urgency": {"type": "score",  "instructions": "How urgent is this?", "criteria": ["low", "medium", "high"]},
+    "refund":  {"type": "noul",   "instructions": "Does the customer ask for a refund?"}
+  }}'
+# {"answers": {"team": {"type": "choice", "choice": "billing", "probabilities": {...}, "confidence": ...},
+#              "urgency": {"type": "score", "score": <expected level index>, "confidence": ...},
+#              "refund": {"type": "noul", "noul": <P(yes)>}}, "usage": {"input_tokens": ..., "output_tokens": 0}}
+```
+
+How a request maps onto this model: `state` is rendered as indented JSON and becomes the record; each choice option reads `label: description`; score levels are the criteria, lowest first; a yes/no question (`noul`, or `bool`) gets its true/false criteria appended to the instructions. `confidence` is the highest option probability. The format was derived from a client implementation, not from a published specification, so compatibility is not guaranteed. The server has **no authentication**, ignores API keys, binds to localhost by default, and answers one request at a time; do not expose it to a network.
+
+For example, the [pi](https://github.com/earendil-works/pi) coding agent sends its Jev classifier calls here with this entry in `~/.pi/agent/models.json` (verified with pi's `classify()`):
+
+```json
+{ "providers": { "typesafe": { "baseUrl": "http://127.0.0.1:8765/v1", "apiKey": "local" } } }
+```
+
 ## Tests
 
 ```bash
 pip install -e '.[test]' && pytest
 ```
 
-The tests use a stand-in tokenizer and need no model weights. They check request validation, prefix sharing, branch spans, and position IDs.
+The tests use a stand-in tokenizer and need no model weights. They check request validation, prefix sharing, branch spans, position IDs, and the local server's request translation and answer shapes.
 
 ## Verification
 
