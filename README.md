@@ -133,34 +133,6 @@ For example, the [pi](https://github.com/earendil-works/pi) coding agent sends i
 { "providers": { "typesafe": { "baseUrl": "http://127.0.0.1:8765/v1", "apiKey": "local" } } }
 ```
 
-## omp plugin
-
-[`omp/`](omp/) is a plugin for the [omp](https://github.com/can1357/oh-my-pi) coding agent. It registers the local server as the judgment model `bonsai-local/bonsai-4b-system-one`, so omp's `judge` role, which drives the per-prompt `auto` thinking level and other typed judgments, runs on this model offline and at no cost. An optional `router` feature also switches the session's model once, from the first prompt's rated difficulty, to your `@smol`, `@mid` (or `@default`), or `@slow` role; the plugin assigns no models itself.
-
-```bash
-omp plugin marketplace add senna-lang/bonsai-4b-system-one
-omp plugin install system-one-bonsai@bonsai-4b-system-one
-omp plugin features system-one-bonsai --enable router     # optional
-```
-
-Then select the model for the role in `~/.omp/agent/config.yml`:
-
-```yaml
-modelRoles:
-  judge: bonsai-local/bonsai-4b-system-one
-defaultThinkingLevel: auto
-```
-
-The plugin does not install Python or the model. Install this repository (see [Install](#install)) and either keep `python -m system_one_bonsai.serve` running, or let the plugin start it on the first prompt by pointing it at your environment:
-
-```bash
-export BONSAI_SYSTEM_ONE_SERVE_CMD="/path/to/bonsai-4b-system-one/.venv/bin/python -m system_one_bonsai.serve"
-```
-
-The started server keeps running after omp exits (about 1.5 GB resident on MLX; log in `~/.cache/bonsai-system-one/serve.log`). If the server is unavailable, the turn continues: auto thinking keeps its previous level and the router keeps the current model.
-
-On 80 coding-agent requests with reference effort levels from a strong model (Claude Opus; not human labels), asked omp's own auto-thinking question through omp's judge path, this model matched the reference effort on 66% of requests (98.8% within one level, median 0.8 s on an Apple M2), against 29% for omp's built-in local `lfm2-1.2b` judge and 25% for `lfm2.5-230m`. It tends to rate one level low, mostly `high` for `xhigh` requests.
-
 ## Tests
 
 ```bash
